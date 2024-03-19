@@ -17,6 +17,7 @@ public class RabbitMQTestController {
     @PostMapping("/publish")
     public String publishMessage(@RequestBody MessageDto messageDto) {
         enqueueDequeService.publishMessage(messageDto);
+        System.out.println(messageDto);
         return messageDto.sender + " 님의 메세지가 정상적으로 발송되었습니다.";
     }
 }
